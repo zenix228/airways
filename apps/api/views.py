@@ -56,7 +56,7 @@ class FlightDetailAPIView(APIView):
 
     def delete(self, request, pk):
         flight = Flight.objects.get(pk=pk)
-        Flight.delete()
+        flight.delete()
         return Response('Deleted', status=HTTP_204_NO_CONTENT)
     
 class AirlineAPIView(APIView):
