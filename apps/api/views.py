@@ -19,7 +19,7 @@ class FlightAPIView(APIView):
         )
     
     def post(self, request):
-        serializer = FlightSerializer(request.data)
+        serializer = FlightSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(
@@ -121,7 +121,7 @@ class PlaneAPIView(APIView):
         )
     
     def post(self, request):
-        serializer = PlaneSerializer(request.data)
+        serializer = PlaneSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(
