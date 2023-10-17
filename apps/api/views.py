@@ -18,7 +18,7 @@ class FlightAPIView(APIView):
             status=HTTP_200_OK
         )
     
-    def Flight(self, request):
+    def post(self, request):
         serializer = FlightSerializer(request.data)
         if serializer.is_valid():
             serializer.save()
@@ -69,7 +69,7 @@ class AirlineAPIView(APIView):
             status=HTTP_200_OK
         )
     
-    def Plane(self, request):
+    def post(self, request):
         serializer = AirlineSerializer(request.data)
         if serializer.is_valid():
             serializer.save()
